@@ -408,7 +408,21 @@ fileprivate extension NSMutableAttributedString {
 struct LatexAttachmentData: Codable {
   let latex: String
   let fontSize: CGFloat
-  let textColor: String
+  let lightTextColor: String
+  let darkTextColor: String
+}
+
+extension LatexAttachmentData {
+  var resolvedTextColor: UIColor {
+    let fallback = UIColor(Color.Theme.Foreground.Primary.Primary750)
+    guard let lightColor = UIColor(hex: lightTextColor),
+          let darkColor = UIColor(hex: darkTextColor) else {
+      return fallback
+    }
+    return UIColor { trait in
+      trait.userInterfaceStyle == .dark ? darkColor : lightColor
+    }
+  }
 }
 
 final class LatexViewProvider: NSTextAttachmentViewProvider {
@@ -424,12 +438,12 @@ final class LatexViewProvider: NSTextAttachmentViewProvider {
 
     var tempLatex = ""
     var tempFontSize = Typography.base.uiFont.pointSize
-    var tempTextColor = UIColor(Color.Theme.Foreground.Primary.Primary750)
+    var tempTextColor: UIColor = UIColor(Color.Theme.Foreground.Primary.Primary750)
     if let data = attachment.contents {
       if let attachmentData = try? Self.jsonDecoder.decode(LatexAttachmentData.self, from: data) {
         tempLatex = attachmentData.latex
         tempFontSize = attachmentData.fontSize
-        tempTextColor = UIColor(hex: attachmentData.textColor) ?? UIColor(Color.Theme.Foreground.Primary.Primary750)
+        tempTextColor = attachmentData.resolvedTextColor
       }
     }
     latex = tempLatex
