@@ -15,8 +15,10 @@ struct BlockView: View {
   init(renderables: [MarkdownRenderable]) {
     self.renderables = renderables
   }
+
   var body: some View {
-    VStack(alignment: .leading, spacing: config.blockSpacing) {      ForEach(renderables) { renderable in
+    VStack(alignment: .leading, spacing: config.blockSpacing) {
+      ForEach(renderables) { renderable in
         SingleBlockView(renderable: renderable)
       }
     }
