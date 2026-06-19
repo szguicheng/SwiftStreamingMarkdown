@@ -15,16 +15,8 @@ struct BlockView: View {
   init(renderables: [MarkdownRenderable]) {
     self.renderables = renderables
   }
-
-  /// Block-to-block spacing proportional to paragraph font size.
-  /// At the default 17pt font: 17 × 0.6 ≈ 10pt. Scales automatically with DynamicType.
-  private var blockSpacing: CGFloat {
-    config.paragraphStyle.textFonts.normal.pointSize * 0.6
-  }
-
   var body: some View {
-    VStack(alignment: .leading, spacing: blockSpacing) {
-      ForEach(renderables) { renderable in
+    VStack(alignment: .leading, spacing: config.blockSpacing) {      ForEach(renderables) { renderable in
         SingleBlockView(renderable: renderable)
       }
     }

@@ -115,7 +115,25 @@ extension MarkdownRenderConfig {
       paragraphStyle: paragraphStyle,
       tableStyle: tableStyle,
       inlineStyle: inlineStyle,
-      textContextMenu: value
+      textContextMenu: value,
+      citationConfig: citationConfig,
+      blockSpacing: blockSpacing
+    )
+  }
+
+  /// Returns a copy with `blockSpacing` replaced.
+  public func withBlockSpacing(value: CGFloat) -> MarkdownRenderConfig {
+    MarkdownRenderConfig(
+      shouldAnimateText: shouldAnimateText,
+      blockQuoteStyle: blockQuoteStyle,
+      headingStyle: headingStyle,
+      orderedListStyle: orderedListStyle,
+      paragraphStyle: paragraphStyle,
+      tableStyle: tableStyle,
+      inlineStyle: inlineStyle,
+      textContextMenu: textContextMenu,
+      citationConfig: citationConfig,
+      blockSpacing: value
     )
   }
 }
