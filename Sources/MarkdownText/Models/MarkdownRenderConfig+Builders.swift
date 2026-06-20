@@ -16,7 +16,9 @@ extension MarkdownRenderConfig {
       paragraphStyle: paragraphStyle,
       tableStyle: tableStyle,
       inlineStyle: inlineStyle,
-      textContextMenu: textContextMenu
+      textContextMenu: textContextMenu,
+      citationConfig: citationConfig,
+      blockSpacing: blockSpacing
     )
   }
 
@@ -30,7 +32,9 @@ extension MarkdownRenderConfig {
       paragraphStyle: paragraphStyle,
       tableStyle: tableStyle,
       inlineStyle: inlineStyle,
-      textContextMenu: textContextMenu
+      textContextMenu: textContextMenu,
+      citationConfig: citationConfig,
+      blockSpacing: blockSpacing
     )
   }
 
@@ -44,7 +48,9 @@ extension MarkdownRenderConfig {
       paragraphStyle: paragraphStyle,
       tableStyle: tableStyle,
       inlineStyle: inlineStyle,
-      textContextMenu: textContextMenu
+      textContextMenu: textContextMenu,
+      citationConfig: citationConfig,
+      blockSpacing: blockSpacing
     )
   }
 
@@ -58,7 +64,9 @@ extension MarkdownRenderConfig {
       paragraphStyle: paragraphStyle,
       tableStyle: tableStyle,
       inlineStyle: inlineStyle,
-      textContextMenu: textContextMenu
+      textContextMenu: textContextMenu,
+      citationConfig: citationConfig,
+      blockSpacing: blockSpacing
     )
   }
 
@@ -72,7 +80,9 @@ extension MarkdownRenderConfig {
       paragraphStyle: value,
       tableStyle: tableStyle,
       inlineStyle: inlineStyle,
-      textContextMenu: textContextMenu
+      textContextMenu: textContextMenu,
+      citationConfig: citationConfig,
+      blockSpacing: blockSpacing
     )
   }
 
@@ -86,7 +96,9 @@ extension MarkdownRenderConfig {
       paragraphStyle: paragraphStyle,
       tableStyle: value,
       inlineStyle: inlineStyle,
-      textContextMenu: textContextMenu
+      textContextMenu: textContextMenu,
+      citationConfig: citationConfig,
+      blockSpacing: blockSpacing
     )
   }
 
@@ -100,7 +112,9 @@ extension MarkdownRenderConfig {
       paragraphStyle: paragraphStyle,
       tableStyle: tableStyle,
       inlineStyle: value,
-      textContextMenu: textContextMenu
+      textContextMenu: textContextMenu,
+      citationConfig: citationConfig,
+      blockSpacing: blockSpacing
     )
   }
 
